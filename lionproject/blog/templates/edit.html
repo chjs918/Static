@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block containt %}
+<h1>Update your Song</h1>
+
+<form action="{% url 'update' blog.id %}" method="post">
+    {%csrf_token%} 
+    <p> 제목: <input type="text" name = "songTitle" value = "{{blog.blog_title}}"></p>
+    <p>가수: <input type="text" name = "songWriter" value = "{{blog.blog_writer}}"}></p>
+    가사:  <textarea name="songBody" id="" cols="30" rows="10">{{blog.blog_body}}</textarea>
+    
+    <br><br>
+    <button type ="submit">submit</button>
+</form>
+{% endblock %}

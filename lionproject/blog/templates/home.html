@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block containt %}
+<h1>Song Notes</h1>
+ <div class="contain">
+ {% for blog in songBlog %}
+    <div>
+    <h3>{{blog.blog_title}}</h3>
+    <h5><b>{{blog.blog_writer}}</b></h5>
+    {{blog.blog_summary}} 
+    <a href="{%url 'detail' blog.id %}">...more</a>
+    <br>
+    </div>
+ {% endfor %} 
+</div>
+<br> <br>
+<div>
+    <a href="{%url 'new'%}">write new Song</a>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block containt %}
+<h1>Write your Song</h1>
+
+<form action="{%url 'create'%}" method="post">
+    {%csrf_token%} 
+    <p> 제목: <input type="text" name = "songTitle"></p>
+    <p>가수: <input type="text" name = "songWriter"></p>
+    가사:  <textarea name="songBody" id="" cols="30" rows="10"></textarea>
+    
+    <br><br>
+    <button type ="submit">submit</button>
+</form>
+{% endblock %}
